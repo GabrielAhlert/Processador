@@ -15,7 +15,11 @@ public class Processador {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Ula a = new Ula();
+        a.decodificar("ADD &0, #4");
+        a.decodificar("ADD &1, #3");
+        a.decodificar("ADD &0, &1");
+        a.decodificar("SUB &1, &0");
     }
     
 }
