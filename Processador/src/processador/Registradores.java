@@ -15,4 +15,17 @@ public class Registradores {
     ArrayList<String> registradores = new ArrayList<>();
     int CI = 0;
     String RI;
+
+    public Registradores() {
+        for (int i = 0; i < 8; i++) {
+            this.registradores.add("0");
+        }
+        
+    }
+    
+        public int getDados(int pos) {
+        return Integer.valueOf(registradores.get(pos));
+    }
+    
+    
 }

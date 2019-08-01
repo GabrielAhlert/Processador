@@ -14,4 +14,17 @@ import java.util.ArrayList;
 public class Memoria {
     ArrayList<String> dados = new ArrayList();
     ArrayList<String> intrucao = new ArrayList();
+    
+    public Memoria(){
+        for (int i = 0; i < 32; i++) {
+            dados.add("0");
+            intrucao.add("");
+        }
+    }
+
+    public int getDados(int pos) {
+        return Integer.valueOf(dados.get(pos));
+    }
+    
+    
 }
