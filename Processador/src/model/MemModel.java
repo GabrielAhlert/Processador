@@ -29,11 +29,11 @@ public class    MemModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int i, int i1) {
-        switch (i){
+        switch (i1){
             case 0:
-                return "&"+String.valueOf(i1);
+                return "&"+String.valueOf(i);
             case 1:
-                return m.getDados(i1);
+                return m.getDados(i);
         }
         return null;
     }

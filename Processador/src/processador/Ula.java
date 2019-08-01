@@ -15,6 +15,17 @@ import java.util.ArrayList;
 public class Ula{
     Memoria m = new Memoria();
     Registradores r = new Registradores();
+    RE re = new RE();
+    
+    public void rodar(){
+        this.novaIntrucao();
+        this.decodificar(re.getRI());
+    }
+    
+    public void novaIntrucao(){
+        re.setRI(m.getInstrucao(re.getCI()));
+    }
+    
     
     public void decodificar(String in){
         // mov r1, r2
