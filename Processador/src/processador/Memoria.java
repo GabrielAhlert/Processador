@@ -35,11 +35,21 @@ public class Memoria {
         }
     }
 
-public int getDados(int pos) {
+    public int getDados(int pos) {
         try{
             return Integer.valueOf(dados.get(pos));
         }catch(NumberFormatException ex){
             return 0;
         }
     }
+    public String getInstrucao(int id){
+        return this.intrucao.get(id);
+    }
+    
+    public void setIntrucao(String[] in){
+        for (int i = 0; i < in.length; i++) {
+            this.intrucao.set(i, in[i]);
+        }
+    }
+    
 }

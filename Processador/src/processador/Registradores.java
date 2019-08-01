@@ -15,7 +15,8 @@ public class Registradores {
     ArrayList<String> registradores = new ArrayList<>();
     int CI = 0;
     String RI;
-
+    
+    
     public Registradores() {
         for (int i = 0; i < 8; i++) {
             this.registradores.add("");
@@ -38,5 +39,5 @@ public class Registradores {
         }
     }
     
-    
+
 }
