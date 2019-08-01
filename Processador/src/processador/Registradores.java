@@ -18,13 +18,24 @@ public class Registradores {
 
     public Registradores() {
         for (int i = 0; i < 8; i++) {
-            this.registradores.add("0");
+            this.registradores.add("");
+        }
+        
+    }
+        public Registradores(int tam) {
+        for (int i = 0; i < tam; i++) {
+            this.registradores.add("");
         }
         
     }
     
-        public int getDados(int pos) {
-        return Integer.valueOf(registradores.get(pos));
+    
+    public int getDados(int pos) {
+        try{
+            return Integer.valueOf(registradores.get(pos));
+        }catch(NumberFormatException ex){
+            return 0;
+        }
     }
     
     
