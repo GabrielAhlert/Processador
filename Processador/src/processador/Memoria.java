@@ -16,15 +16,30 @@ public class Memoria {
     ArrayList<String> intrucao = new ArrayList();
     
     public Memoria(){
-        for (int i = 0; i < 32; i++) {
-            dados.add("0");
+        for (int i = 0; i < 16; i++) {
+            dados.add("");
             intrucao.add("");
         }
     }
 
-    public int getDados(int pos) {
-        return Integer.valueOf(dados.get(pos));
+    public ArrayList<String> getD() {
+        return dados;
     }
     
-    
+    public Memoria(int tamd, int tami){
+        for (int i = 0; i < tamd; i++) {
+            dados.add("");
+        }
+        for (int i = 0; i < tami; i++) {
+            intrucao.add("");
+        }
+    }
+
+public int getDados(int pos) {
+        try{
+            return Integer.valueOf(dados.get(pos));
+        }catch(NumberFormatException ex){
+            return 0;
+        }
+    }
 }

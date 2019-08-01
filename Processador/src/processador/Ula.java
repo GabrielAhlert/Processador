@@ -24,14 +24,22 @@ public class Ula{
         ArrayList temp = null;
         int tempp = 0 , numa = 0, numb = 0;
         if(a[1].contains("&")){
+            try {
             tempp = Integer.valueOf(a[1].replace("&", ""));
+            }catch(NumberFormatException ex){
+                tempp = 0;
+            }
             temp=m.dados;
             numa = getnum(a[1]);
             numb = getnum(a[2]);
         }
         
         if(a[1].contains("R")){
+            try {
             tempp = Integer.valueOf(a[1].replace("R", ""));
+            }catch(NumberFormatException ex){
+                tempp = 0;
+            }
             temp=m.dados;
             numa = getnum(a[1]);
             numb = getnum(a[2]);
@@ -60,6 +68,10 @@ public class Ula{
         
         
         
+    }
+
+    public Memoria getM() {
+        return m;
     }
     public int getnum(String a){
         if(a.contains("R"))
