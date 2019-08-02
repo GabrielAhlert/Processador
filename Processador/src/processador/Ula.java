@@ -73,16 +73,31 @@ public class Ula{
         switch(a[0]){
             case "ADD":
                 soma(temp,tempp,numa,numb);
-            break;
+                break;
             case "MOV":
                 mover(temp,tempp,numb);
-            break;
+                break;
             case "SUB":
                 subtrair(temp,tempp,numa,numb);
-            break;
+                break;
+            case "JMP":
+                re.getRI();
+                break;
+            case "GOTO":
+                System.out.println(numa);
+                setgoto(a[1]);
+                break;
+            case "JB":
+                if(numa>numb)
+                    re.getRI();
+                break;
+            case "JL":
+                if(numa<numb)
+                    re.getRI();
+                break;
             default:
                 System.out.println("Fim!");
-            break;
+                break;
         }
         
         
@@ -129,6 +144,10 @@ public class Ula{
         
     public void subtrair(ArrayList x, int xn, int a, int b){
         x.set(xn, String.valueOf(a-b));
+    }
+    
+    public void setgoto(String in){
+        re.setCI(Integer.valueOf(in.replace("&", "")));
     }
     
     
