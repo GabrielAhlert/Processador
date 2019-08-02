@@ -13,8 +13,7 @@ import java.util.ArrayList;
  */
 public class Registradores {
     ArrayList<String> registradores = new ArrayList<>();
-    int CI = 0;
-    String RI;
+
     
     
     public Registradores() {
@@ -29,6 +28,11 @@ public class Registradores {
         }
         
     }
+    public void setIntrucao(String[] in){
+        for (int i = 0; i < in.length; i++) {
+            this.registradores.set(i, in[i]);
+        }
+    }
     
     
     public int getDados(int pos) {
@@ -38,6 +42,11 @@ public class Registradores {
             return 0;
         }
     }
+
+    public ArrayList<String> getRegistradores() {
+        return registradores;
+    }
+    
     
 
 }

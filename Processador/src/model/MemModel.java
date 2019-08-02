@@ -15,7 +15,7 @@ import processador.Memoria;
 public class    MemModel extends AbstractTableModel {
 
     Memoria m = new Memoria();
-    String[] Colunas={"Endereço","Valores"};
+    String[] Colunas={"Endereço","Valor"};
     
     @Override
     public int getRowCount() {

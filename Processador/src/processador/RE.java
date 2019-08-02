@@ -10,9 +10,18 @@ package processador;
  * @author gabri
  */
 public class RE{ //Registradores Especiais
-    String RI;
+    String RI = "";
     int CI = 0;
-
+    
+    public String[] getDados(){
+        String[] a ={RI , String.valueOf(CI)};
+        return a;
+    }
+    
+    public String getInstrucao(){
+        return RI;
+    }
+    
     public String getRI() {
         this.CI++;
         return RI;
