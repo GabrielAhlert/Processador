@@ -5,47 +5,48 @@
  */
 package model;
 
+import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
-import processador.Memoria;
 
 /**
  *
  * @author Windows
  */
-public class    MemModel extends AbstractTableModel {
-
-    Memoria m = new Memoria();
-    String[] Colunas={"Endereço","Valor"};
+public class ModelRegistradores extends AbstractTableModel{
+    
+    String[] colunas = {"Endereço","Valor"};
+    ArrayList<String> linhas = new ArrayList();
     
     @Override
     public int getRowCount() {
-        return m.getD().size();
+        return linhas.size();
     }
-
-    @Override
-    public int getColumnCount() {
-        return Colunas.length;
-    }
-
     @Override
     public Object getValueAt(int i, int i1) {
         switch (i1){
             case 0:
-                return "&"+String.valueOf(i);
+                return "R"+String.valueOf(i);
             case 1:
-                return m.getDados(i);
+                return linhas.get(i);
         }
         return null;
     }
 
     @Override
-    public String getColumnName(int i) {
-        return this.Colunas[i];
+    public int getColumnCount() {
+        return colunas.length;
     }
 
-    public void setM(Memoria m) {
-        this.m = m;
+    @Override
+    public String getColumnName(int i) {
+        return this.colunas[i];
     }
+
+    public void setLinhas(ArrayList<String> linhas) {
+        this.linhas = linhas;
+    }
+    
+
     
     
 }
